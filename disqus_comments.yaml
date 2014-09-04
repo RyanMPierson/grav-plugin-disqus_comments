@@ -1,2 +1,5 @@
 enabled: true
 counter: true
+
+shortname:
+developer: true
