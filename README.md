@@ -29,11 +29,13 @@ Here the list of variables available:
   - developer
   - identifier
   - url
+  - disabled
 
 Default values:
 - title = Page title
 - identifier = Page ID
 - url = Page URL
+- disabled = false
 
 You can setup directly the child page (blog page example) in the headers or directly on `/your/site/grav/user/config/disqus_comments.yaml` for static configuration:
 ```
@@ -47,6 +49,7 @@ For static configuration in `/your/site/grav/user/config/disqus_comments.yaml` u
 ```
 shortname: disqus_shortname_example
 developer: false
+disabled: false
 ```
 
 I suggest to setup only shortname and if you develop in the local environment, in the blog page, for the other variables use a default variables

@@ -2,4 +2,5 @@ enabled: true
 counter: true
 
 shortname:
-developer: true
+developer: false
+disabled: false

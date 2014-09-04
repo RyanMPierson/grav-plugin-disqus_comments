@@ -23,6 +23,11 @@ class Disqus_CommentsPlugin extends Plugin
     $post = $this->grav['page'];
     $blog = $post->parent();
 
+    /* disable comments for this page */
+    if ( isset($post->header()->disqus_comments) and $post->header()->disqus_comments->disabled ) {
+      return;
+    }
+
     /* get defaults from config file */
     $defaults = (array) $this->config->get('plugins.disqus_comments');
 
@@ -32,7 +37,7 @@ class Disqus_CommentsPlugin extends Plugin
     } elseif ( $blog and isset($blog->header()->disqus_comments) ) {
       $post->header()->disqus_comments = array_merge($defaults, $blog->header()->disqus_comments);
     } else {
-      $post->header()->disqus_comments = $default;
+      $post->header()->disqus_comments = $defaults;
     }
   }
 }
