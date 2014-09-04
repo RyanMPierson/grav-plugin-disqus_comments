@@ -19,15 +19,18 @@ class Disqus_CommentsPlugin extends Plugin
 
   public function onPageInitialized()
   {
+    /* save post and blog page object */
     $post = $this->grav['page'];
     $blog = $post->parent();
 
+    /* get defaults from config file */
     $defaults = (array) $this->config->get('plugins.disqus_comments');
 
-    if ( isset($blog->header()->disqus_comments) ) {
-      $post->header()->disqus_comments = array_merge($defaults, $blog->header()->disqus_comments);
-    } elseif ( isset($post->header()->disqus_comments) ) {
+    /* validate first post then blog page header */
+    if ( isset($post->header()->disqus_comments) ) {
       $post->header()->disqus_comments = array_merge($defaults, $post->header()->disqus_comments);
+    } elseif ( isset($blog->header()->disqus_comments) ) {
+      $post->header()->disqus_comments = array_merge($defaults, $blog->header()->disqus_comments);
     } else {
       $post->header()->disqus_comments = $default;
     }
