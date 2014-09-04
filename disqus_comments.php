@@ -1,11 +1,7 @@
 <?php
 namespace Grav\Plugin;
 
-use Grav\Common\Grav;
-use Grav\Common\Page\Collection;
-use Grav\Common\Page\Page;
 use Grav\Common\Plugin;
-use Grav\Component\EventDispatcher\Event;
 
 class Disqus_CommentsPlugin extends Plugin
 {
