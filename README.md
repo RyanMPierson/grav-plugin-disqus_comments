@@ -22,25 +22,20 @@ Put in the your theme file this example:
 {% include 'disqus_comments.html.twig' %}
 ```
 
-You can pass this variables directly if you don't want setup the blog page headers:
-
-```
-{% include 'disqus_comments.html.twig' with {'disqus_shortname': 'disqus_shortname_example', 'disqus_developer': 'true'} %}
-```
-
 Here the list of variables available:
-- disqus_shortname
-- disqus_title
-- disqus_developer
-- disqus_identifier
-- disqus_url
+- disqus_comments:
+  - shortname
+  - title
+  - developer
+  - identifier
+  - url
 
 Default values:
-- disqus_title = Page title
-- disqus_identifier = Page ID
-- disqus_url = Page URL
+- title = Page title
+- identifier = Page ID
+- url = Page URL
 
-You can setup directly the child page (blog page example) in the headers:
+You can setup directly the child page (blog page example) in the headers or directly on `/your/site/grav/user/plugins/disqus_comments/disqus_comments.yaml`:
 ```
 disqus_comments:
   shortname: disqus_shortname_example
