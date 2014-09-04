@@ -32,10 +32,10 @@ class Disqus_CommentsPlugin extends Plugin
 
     if ( ($blog and $blog->header()) and $disqus_comments = $blog->header()->disqus_comments and is_array($disqus_comments) ) {
       $this->grav['twig']->twig_vars['disqus_shortname']  = (isset($disqus_comments['shortname'])) ? $disqus_comments['shortname'] : '';
-      $this->grav['twig']->twig_vars['disqus_title']      = (isset($disqus_comments['disqus_title'])) ? $disqus_comments['disqus_title'] : $post->title();
-      $this->grav['twig']->twig_vars['disqus_developer']  = (isset($disqus_comments['disqus_developer'])) ? 'true' : 'false';
-      $this->grav['twig']->twig_vars['disqus_identifier'] = (isset($disqus_comments['disqus_identifier'])) ? $disqus_comments['disqus_identifier'] : $post->id();
-      $this->grav['twig']->twig_vars['disqus_url']        = (isset($disqus_comments['disqus_url'])) ? $disqus_comments['disqus_url'] : $post->url(true);
+      $this->grav['twig']->twig_vars['disqus_title']      = (isset($disqus_comments['title'])) ? $disqus_comments['title'] : $post->title();
+      $this->grav['twig']->twig_vars['disqus_developer']  = (isset($disqus_comments['developer'])) ? 'true' : 'false';
+      $this->grav['twig']->twig_vars['disqus_identifier'] = (isset($disqus_comments['identifier'])) ? $disqus_comments['identifier'] : $post->id();
+      $this->grav['twig']->twig_vars['disqus_url']        = (isset($disqus_comments['url'])) ? $disqus_comments['url'] : $post->url(true);
     }
   }
 }
