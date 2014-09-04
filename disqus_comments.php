@@ -29,7 +29,7 @@ class Disqus_CommentsPlugin extends Plugin
     /* validate first post then blog page header */
     if ( isset($post->header()->disqus_comments) ) {
       $post->header()->disqus_comments = array_merge($defaults, $post->header()->disqus_comments);
-    } elseif ( isset($blog->header()->disqus_comments) ) {
+    } elseif ( $blog and isset($blog->header()->disqus_comments) ) {
       $post->header()->disqus_comments = array_merge($defaults, $blog->header()->disqus_comments);
     } else {
       $post->header()->disqus_comments = $default;
