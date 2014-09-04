@@ -35,12 +35,18 @@ Default values:
 - identifier = Page ID
 - url = Page URL
 
-You can setup directly the child page (blog page example) in the headers or directly on `/your/site/grav/user/plugins/disqus_comments/disqus_comments.yaml`:
+You can setup directly the child page (blog page example) in the headers or directly on `/your/site/grav/user/config/disqus_comments.yaml` for static configuration:
 ```
 disqus_comments:
   shortname: disqus_shortname_example
   title: Different title page
   id: page-slug-example
+```
+
+For static configuration in `/your/site/grav/user/config/disqus_comments.yaml` use this example:
+```
+shortname: disqus_shortname_example
+developer: false
 ```
 
 I suggest to setup only shortname and if you develop in the local environment, in the blog page, for the other variables use a default variables
